@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LTRouter_Example' do
+  pod 'LTRouter', :path => '../'
+
+  target 'LTRouter_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,23 @@
+{
+  "name": "LTRouter",
+  "version": "0.1.0",
+  "summary": "LTRouter",
+  "description": "TODO: LTRouter 个人工具.",
+  "homepage": "https://github.com/yelon21/LTRouter",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "yjpal": "yl21ly@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/yelon21/LTRouter.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "6.0"
+  },
+  "requires_arc": false,
+  "source_files": "LTRouter/Classes/**/*"
+}

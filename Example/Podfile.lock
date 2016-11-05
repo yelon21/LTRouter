@@ -1,0 +1,16 @@
+PODS:
+  - LTRouter (0.1.0)
+
+DEPENDENCIES:
+  - LTRouter (from `../`)
+
+EXTERNAL SOURCES:
+  LTRouter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LTRouter: a606412de0342ce52c9f0dab94edf7597fb2cb7c
+
+PODFILE CHECKSUM: 9448ce54b0bd3ff5ae9f9d61a1375eb5510dbe82
+
+COCOAPODS: 1.1.0.rc.2
