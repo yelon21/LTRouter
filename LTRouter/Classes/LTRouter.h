@@ -15,7 +15,7 @@
 
  @param rootVC 根视图控制器
  */
-+ (void)LT_SetDefaultRootViewControlle:(UIViewController *)rootVC;
++ (void)LT_SetDefaultRootViewController:(UIViewController *)rootVC;
 
 /**
  开启一个视图控制器

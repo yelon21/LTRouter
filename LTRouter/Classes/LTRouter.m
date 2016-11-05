@@ -40,13 +40,13 @@ static UIViewController *LT_defaultRootViewController = nil;
  
  @param rootVC 根视图控制器
  */
-+ (void)LT_SetDefaultRootViewControlle:(UIViewController *)rootVC{
++ (void)LT_SetDefaultRootViewController:(UIViewController *)rootVC{
 
     if (!rootVC || ![rootVC isKindOfClass:[UIViewController class]]) {
         
         return;
     }
-    LT_defaultRootViewController = rootVC;
+    LT_defaultRootViewController = [rootVC retain];
 }
 
 /**
@@ -84,7 +84,10 @@ static UIViewController *LT_defaultRootViewController = nil;
         else if (LT_defaultRootViewController
                  &&[LT_defaultRootViewController isKindOfClass:[UIViewController class]]){
         
-            [[UIApplication sharedApplication].delegate window].rootViewController = LT_defaultRootViewController;
+            if (viewCon != LT_defaultRootViewController) {
+                
+                [[UIApplication sharedApplication].delegate window].rootViewController = LT_defaultRootViewController;
+            }
         }
     }
 }

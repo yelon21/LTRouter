@@ -7,12 +7,17 @@
 //
 
 #import "LYAppDelegate.h"
+#import "LTRouter.h"
+#import "Page1VC.h"
 
 @implementation LYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    Page1VC *vc = [[Page1VC alloc]init];
+    vc.view.backgroundColor = [UIColor yellowColor];
+    [LTRouter LT_SetDefaultRootViewController:vc];
     return YES;
 }
 
