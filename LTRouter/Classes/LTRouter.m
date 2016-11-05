@@ -258,11 +258,15 @@ static UIViewController *LT_defaultRootViewController = nil;
     return [self LT_FindFrontNavigationViewController:viewCon];
 }
 
-+ (UIViewController *)LT_FindFrontNavigationViewController:(UIViewController *)root{
++ (UINavigationController *)LT_FindFrontNavigationViewController:(UIViewController *)root{
     
     UIViewController *rootVC = root;
     
-    if ([rootVC isKindOfClass:[UINavigationController class]]) {
+    if (rootVC.presentedViewController) {
+        
+        return [self LT_FindFrontNavigationViewController:rootVC.presentedViewController];
+    }
+    else if ([rootVC isKindOfClass:[UINavigationController class]]) {
         
         return rootVC;
     }
