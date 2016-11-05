@@ -100,8 +100,6 @@ static UIViewController *LT_defaultRootViewController = nil;
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:LTLTRouter_FilterString(urlString)];
     
-    NSLog(@"scheme=%@",url.scheme);
-    
     __strong UIViewController *viewControlelr = [self LT_GetViewController:urlString];
     
     if (!viewControlelr || ![viewControlelr isKindOfClass:[UIViewController class]]) {
