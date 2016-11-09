@@ -33,6 +33,10 @@
     return vc;
 }
 
+-(void)ssssss{
+
+    NSLog(@"0099");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,5 +75,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    
+    return UIInterfaceOrientationPortrait;
+}
 
 @end

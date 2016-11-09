@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-
+@class Page1VC;
 @interface LYViewController : UIViewController
 
 @end

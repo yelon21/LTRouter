@@ -32,6 +32,7 @@ NSString *LTLTRouter_FilterString(id obj){
 #define kInitFunctionName @"LT_InitInstanceWithPara:"
 
 static UIViewController *LT_defaultRootViewController = nil;
+static Class LT_defaultNavigationViewControllerClass = nil;
 
 @implementation LTRouter
 
@@ -49,6 +50,15 @@ static UIViewController *LT_defaultRootViewController = nil;
     LT_defaultRootViewController = [rootVC retain];
 }
 
++ (void)LT_SetDefaultNavigationViewControllerClass:(Class)navClass{
+
+    if (!navClass || ![[navClass new] isKindOfClass:[UINavigationController class]]) {
+        
+        return;
+    }
+    
+    LT_defaultNavigationViewControllerClass = navClass;
+}
 /**
  关闭视图控制器
  
@@ -98,7 +108,7 @@ static UIViewController *LT_defaultRootViewController = nil;
  @param urlString url格式，host为类名，query为相关参数
  @param animated 是否动画
  */
-+ (void)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated{
++ (UIViewController *)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated{
     
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:LTLTRouter_FilterString(urlString)];
@@ -107,7 +117,7 @@ static UIViewController *LT_defaultRootViewController = nil;
     
     if (!viewControlelr || ![viewControlelr isKindOfClass:[UIViewController class]]) {
         
-        return;
+        return nil;
     }
     
     NSString *scheme = LTLTRouter_FilterString(url.scheme);
@@ -127,6 +137,8 @@ static UIViewController *LT_defaultRootViewController = nil;
                               animated:animated
                             completion:nil];
     }
+    
+    return viewControlelr;
 }
 
 
@@ -138,7 +150,13 @@ static UIViewController *LT_defaultRootViewController = nil;
     
     if (!nav) {
         
-        UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:viewCon];
+        Class navClass = LT_defaultNavigationViewControllerClass;
+        if (!navClass) {
+            
+            navClass = [UINavigationController class];
+        }
+        
+        UINavigationController *navCon = [[(UINavigationController *)navClass alloc] initWithRootViewController:viewCon];
         
         [self LT_PresentViewController:navCon
                               animated:animated

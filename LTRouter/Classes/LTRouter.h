@@ -17,13 +17,22 @@
  */
 + (void)LT_SetDefaultRootViewController:(UIViewController *)rootVC;
 
+
+/**
+ navClass
+
+ @param navClass navClass
+ */
++ (void)LT_SetDefaultNavigationViewControllerClass:(Class)navClass;
+
 /**
  开启一个视图控制器
 
  @param urlString url格式，host为类名，query为相关参数
  @param animated 是否动画
+ @return UIViewController
  */
-+ (void)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated;
++ (UIViewController *)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated;
 
 /**
  关闭视图控制器

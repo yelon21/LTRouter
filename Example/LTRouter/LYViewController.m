@@ -43,6 +43,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
+    [LTRouter LT_SetDefaultNavigationViewControllerClass:NSClassFromString(@"LTNavigationController")];
 }
 
 - (NSString *)randomColor{
@@ -73,8 +74,10 @@
 
 - (IBAction)pushAction:(id)sender {
     
-    [LTRouter LT_OpenUrl:[NSString stringWithFormat:@"%@://%@",kLTRouterSchemePush,[NSString stringWithFormat:@"Page1VC?model=%@&color=%@&rr=开心吗",kLTRouterSchemePush,[self randomColor]]]
+    UIViewController *viewCon = [LTRouter LT_OpenUrl:[NSString stringWithFormat:@"%@://%@",kLTRouterSchemePush,[NSString stringWithFormat:@"Page1VC?model=%@&color=%@&rr=开心吗",kLTRouterSchemePush,[self randomColor]]]
                 animated:YES];
+    
+    [(Page1VC *)viewCon ssssss];
 }
 
 

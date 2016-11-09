@@ -10,4 +10,6 @@
 
 @interface Page1VC : UIViewController
 
+
+- (void)ssssss;
 @end
