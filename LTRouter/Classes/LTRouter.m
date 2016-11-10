@@ -82,7 +82,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
         
         if (index == NSNotFound) {
             
-            [LTRouter LT_CloseViewController:viewCon animated:animated];
+            return;
         }
         else if (index > 0) {
             
