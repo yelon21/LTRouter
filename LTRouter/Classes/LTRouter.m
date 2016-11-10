@@ -76,9 +76,18 @@ static Class LT_defaultNavigationViewControllerClass = nil;
     
     if (nav) {
         
-        if ([nav.viewControllers count] > 1) {
+        NSArray *viewControllers = nav.viewControllers;
+        
+        NSUInteger index = [viewControllers indexOfObject:viewCon];
+        
+        if (index == NSNotFound) {
             
-            [nav popViewControllerAnimated:animated];
+            [LTRouter LT_CloseViewController:viewCon animated:animated];
+        }
+        else if (index > 0) {
+            
+            UIViewController *toVC = [viewControllers objectAtIndex:index-1];
+            [nav popToViewController:toVC animated:animated];
         }
         else {
         
