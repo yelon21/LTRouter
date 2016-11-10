@@ -32,7 +32,7 @@
  @param animated 是否动画
  @return UIViewController
  */
-+ (UIViewController *)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated;
++ (id)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated;
 
 /**
  关闭视图控制器

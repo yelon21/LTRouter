@@ -108,7 +108,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
  @param urlString url格式，host为类名，query为相关参数
  @param animated 是否动画
  */
-+ (UIViewController *)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated{
++ (id)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated{
     
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:LTLTRouter_FilterString(urlString)];
