@@ -185,7 +185,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
     }
     else{
         
-        [[UIApplication sharedApplication].delegate window].rootViewController = frontVC;
+        [[UIApplication sharedApplication].delegate window].rootViewController = viewCon;
     }
 
 }
