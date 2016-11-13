@@ -33,7 +33,13 @@
  @return UIViewController
  */
 + (id)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated;
-
+/**
+ 开启一个视图控制器
+ 
+ @param url url格式，host为类名，query为相关参数
+ @param animated 是否动画
+ */
++ (id)LT_OpenURL:(NSURL *)url animated:(BOOL)animated;
 /**
  关闭视图控制器
 

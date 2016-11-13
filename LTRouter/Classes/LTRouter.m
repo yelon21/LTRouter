@@ -118,11 +118,26 @@ static Class LT_defaultNavigationViewControllerClass = nil;
  @param animated 是否动画
  */
 + (id)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated{
+
+    urlString = LTLTRouter_FilterString(urlString);
     
-    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *url = [NSURL URLWithString:LTLTRouter_FilterString(urlString)];
+    NSURL *url = [NSURL URLWithString:urlString];
+    if (!url) {
+        
+        url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    }
     
-    __strong UIViewController *viewControlelr = [self LT_GetViewController:urlString];
+    return [self LT_OpenURL:url animated:animated];
+}
+/**
+ 开启一个视图控制器
+ 
+ @param url url格式，host为类名，query为相关参数
+ @param animated 是否动画
+ */
++ (id)LT_OpenURL:(NSURL *)url animated:(BOOL)animated{
+    
+    __strong UIViewController *viewControlelr = [self LT_GetViewController:url.absoluteString];
     
     if (!viewControlelr || ![viewControlelr isKindOfClass:[UIViewController class]]) {
         
@@ -331,3 +346,71 @@ static Class LT_defaultNavigationViewControllerClass = nil;
 NSString * const kLTRouterSchemePresent = @"LTRouterSchemePresent";
 NSString * const kLTRouterSchemePush    = @"LTRouterSchemePush";
 NSString * const kLTRouterSchemeDefault = @"LTRouterSchemeDefault";
+
+#import <objc/runtime.h>
+
+@interface UIApplication (LTCommon)
+
+@end
+
+@implementation UIApplication (LTCommon)
+
++ (void)load {
+    
+    [self swizzleSelector:@selector(openURL:)
+             withSelector:@selector(lt_openURL:)];
+    
+    [self swizzleSelector:@selector(openURL:options:completionHandler:)
+             withSelector:@selector(lt_openURL:options:completionHandler:)];
+}
+
++ (void)swizzleSelector:(SEL)originalSelector withSelector:(SEL)swizzledSelector {
+    Method originalMethod = class_getInstanceMethod(self, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);
+    if (class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))) {
+        class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+}
+
+-(BOOL)lt_openURL:(NSURL *)url{
+    
+    NSString *scheme = url.scheme;
+    
+    if ([scheme isEqualToString:kLTRouterSchemeDefault]
+        ||[scheme isEqualToString:kLTRouterSchemePush]
+        |[scheme isEqualToString:kLTRouterSchemePresent]) {
+        
+        [LTRouter LT_OpenURL:url animated:YES];
+        return NO;
+    }
+    else{
+    
+        return [self lt_openURL:url];
+    }
+}
+
+-(void)lt_openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options completionHandler:(void (^)(BOOL))completion{
+    
+    NSString *scheme = url.scheme;
+    
+    if ([scheme isEqualToString:kLTRouterSchemeDefault]
+        ||[scheme isEqualToString:kLTRouterSchemePush]
+        |[scheme isEqualToString:kLTRouterSchemePresent]) {
+        
+        [LTRouter LT_OpenURL:url animated:YES];
+        
+        completion(NO);
+    }
+    else{
+        
+        return [self lt_openURL:url
+                        options:options
+              completionHandler:completion];
+    }
+}
+
+@end
+
+
