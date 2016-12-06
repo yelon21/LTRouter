@@ -189,7 +189,6 @@ static Class LT_defaultNavigationViewControllerClass = nil;
     }
     else{
         
-        viewCon.hidesBottomBarWhenPushed = ![viewCon isKindOfClass:[UITabBarController class]];
         [nav pushViewController:viewCon animated:animated];
     }
 }
