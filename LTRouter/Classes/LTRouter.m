@@ -401,7 +401,10 @@ NSString * const kLTRouterSchemeDefault = @"LTRouterSchemeDefault";
         
         [LTRouter LT_OpenURL:url animated:YES];
         
-        completion(NO);
+        if (completion) {
+            
+            completion(NO);
+        }
     }
     else{
         
