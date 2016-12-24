@@ -121,10 +121,20 @@ static Class LT_defaultNavigationViewControllerClass = nil;
     
     urlString = LTLTRouter_FilterString(urlString);
     
+    if ([urlString respondsToSelector:@selector(stringByAddingPercentEncodingWithAllowedCharacters:)]) {
+        
+        urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    }
+    else{
+        
+        urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }
+    
     NSURL *url = [NSURL URLWithString:urlString];
+   
     if (!url) {
         
-        url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        return nil;
     }
     
     return [self LT_OpenURL:url animated:animated];
@@ -136,6 +146,11 @@ static Class LT_defaultNavigationViewControllerClass = nil;
  @param animated 是否动画
  */
 + (id)LT_OpenURL:(NSURL *)url animated:(BOOL)animated{
+    
+    if (!url || ![url isKindOfClass:[NSURL class]]) {
+        
+        return nil;
+    }
     
     __strong UIViewController *viewControlelr = [self LT_GetViewController:url.absoluteString];
     

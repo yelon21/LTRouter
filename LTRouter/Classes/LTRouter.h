@@ -40,6 +40,14 @@
  @param animated 是否动画
  */
 + (id)LT_OpenURL:(NSURL *)url animated:(BOOL)animated;
+
+/**
+  获取视图控制器
+
+ @param urlString url格式，host为类名，query为相关参数
+ @return 实例
+ */
++ (UIViewController *)LT_GetViewController:(NSString *)urlString;
 /**
  关闭视图控制器
 
