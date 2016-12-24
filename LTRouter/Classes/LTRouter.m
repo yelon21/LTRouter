@@ -42,7 +42,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
  @param rootVC 根视图控制器
  */
 + (void)LT_SetDefaultRootViewController:(UIViewController *)rootVC{
-
+    
     if (!rootVC || ![rootVC isKindOfClass:[UIViewController class]]) {
         
         return;
@@ -51,7 +51,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
 }
 
 + (void)LT_SetDefaultNavigationViewControllerClass:(Class)navClass{
-
+    
     if (!navClass || ![[navClass new] isKindOfClass:[UINavigationController class]]) {
         
         return;
@@ -66,7 +66,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
  @param animated 是否动画
  */
 + (void)LT_CloseViewController:(UIViewController *)viewCon animated:(BOOL)animated{
-
+    
     if (!viewCon || ![viewCon isKindOfClass:[UIViewController class]]) {
         
         return;
@@ -90,19 +90,19 @@ static Class LT_defaultNavigationViewControllerClass = nil;
             [nav popToViewController:toVC animated:animated];
         }
         else {
-        
+            
             [LTRouter LT_CloseViewController:nav animated:animated];
         }
     }
     else{
-    
+        
         if (viewCon.presentingViewController) {
             
             [viewCon dismissViewControllerAnimated:animated completion:nil];
         }
         else if (LT_defaultRootViewController
                  &&[LT_defaultRootViewController isKindOfClass:[UIViewController class]]){
-        
+            
             if (viewCon != LT_defaultRootViewController) {
                 
                 [[UIApplication sharedApplication].delegate window].rootViewController = LT_defaultRootViewController;
@@ -118,7 +118,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
  @param animated 是否动画
  */
 + (id)LT_OpenUrl:(NSString *)urlString animated:(BOOL)animated{
-
+    
     urlString = LTLTRouter_FilterString(urlString);
     
     NSURL *url = [NSURL URLWithString:urlString];
@@ -169,7 +169,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
 //push 一视图控制器
 + (void)LT_PushViewController:(UIViewController *)viewCon
                      animated:(BOOL)animated{
-
+    
     UINavigationController *nav = [self LT_FrontNavigationViewController];
     
     if (!nav) {
@@ -197,7 +197,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
 + (void)LT_PresentViewController:(UIViewController *)viewCon
                         animated:(BOOL)animated
                       completion:(void (^ __nullable)(void))completion{
-
+    
     UIViewController *frontVC = [self LT_FrontViewController];
     
     if (frontVC) {
@@ -211,7 +211,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
         
         [[UIApplication sharedApplication].delegate window].rootViewController = viewCon;
     }
-
+    
 }
 
 //根据urlString获取实例
@@ -365,13 +365,11 @@ NSString * const kLTRouterSchemeDefault = @"LTRouterSchemeDefault";
 }
 
 + (void)swizzleSelector:(SEL)originalSelector withSelector:(SEL)swizzledSelector {
+    
     Method originalMethod = class_getInstanceMethod(self, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);
-    if (class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))) {
-        class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-    } else {
-        method_exchangeImplementations(originalMethod, swizzledMethod);
-    }
+    
+    method_exchangeImplementations(originalMethod, swizzledMethod);
 }
 
 -(BOOL)lt_openURL:(NSURL *)url{
@@ -386,7 +384,7 @@ NSString * const kLTRouterSchemeDefault = @"LTRouterSchemeDefault";
         return NO;
     }
     else{
-    
+        
         return [self lt_openURL:url];
     }
 }
@@ -408,9 +406,9 @@ NSString * const kLTRouterSchemeDefault = @"LTRouterSchemeDefault";
     }
     else{
         
-        return [self lt_openURL:url
-                        options:options
-              completionHandler:completion];
+        [self lt_openURL:url
+                 options:options
+       completionHandler:completion];
     }
 }
 
