@@ -195,7 +195,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
             navClass = [UINavigationController class];
         }
         
-        UINavigationController *navCon = [[(UINavigationController *)navClass alloc] initWithRootViewController:viewCon];
+        UINavigationController *navCon = [[navClass alloc] initWithRootViewController:viewCon];
         
         [self LT_PresentViewController:navCon
                               animated:animated
@@ -325,7 +325,7 @@ static Class LT_defaultNavigationViewControllerClass = nil;
     }
     else if ([rootVC isKindOfClass:[UINavigationController class]]) {
         
-        return rootVC;
+        return (UINavigationController *)rootVC;
     }
     else if ([rootVC isKindOfClass:[UITabBarController class]]) {
         
@@ -373,10 +373,10 @@ NSString * const kLTRouterSchemeDefault = @"LTRouterSchemeDefault";
 + (void)load {
     
     [self swizzleSelector:@selector(openURL:)
-             withSelector:@selector(lt_openURL:)];
+             withSelector:@selector(ltRouter_openURL:)];
     
     [self swizzleSelector:@selector(openURL:options:completionHandler:)
-             withSelector:@selector(lt_openURL:options:completionHandler:)];
+             withSelector:@selector(ltRouter_openURL:options:completionHandler:)];
 }
 
 + (void)swizzleSelector:(SEL)originalSelector withSelector:(SEL)swizzledSelector {
@@ -387,7 +387,7 @@ NSString * const kLTRouterSchemeDefault = @"LTRouterSchemeDefault";
     method_exchangeImplementations(originalMethod, swizzledMethod);
 }
 
--(BOOL)lt_openURL:(NSURL *)url{
+-(BOOL)ltRouter_openURL:(NSURL *)url{
     
     NSString *scheme = url.scheme;
     
@@ -400,11 +400,13 @@ NSString * const kLTRouterSchemeDefault = @"LTRouterSchemeDefault";
     }
     else{
         
-        return [self lt_openURL:url];
+        return [self ltRouter_openURL:url];
     }
 }
 
--(void)lt_openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options completionHandler:(void (^)(BOOL))completion{
+-(void)ltRouter_openURL:(NSURL *)url
+                options:(NSDictionary<NSString *,id> *)options
+      completionHandler:(void (^)(BOOL))completion{
     
     NSString *scheme = url.scheme;
     
@@ -421,9 +423,9 @@ NSString * const kLTRouterSchemeDefault = @"LTRouterSchemeDefault";
     }
     else{
         
-        [self lt_openURL:url
-                 options:options
-       completionHandler:completion];
+        [self ltRouter_openURL:url
+                       options:options
+             completionHandler:completion];
     }
 }
 
