@@ -72,13 +72,32 @@ static Class LT_defaultNavigationViewControllerClass = nil;
         return;
     }
     
-    UINavigationController *nav = viewCon.navigationController;
+    UIViewController *toCloseViewController = viewCon;
+    UINavigationController *nav = toCloseViewController.navigationController;
+    
+    do {
+        
+        if (!nav) {
+            
+            break;
+        }
+        
+        if ([NSStringFromClass(nav.class) isEqualToString:@"LTWrapNavigationController"]) {
+            
+            toCloseViewController = nav.parentViewController;
+            nav = toCloseViewController.navigationController;
+        }else{
+            
+            break;
+        }
+        
+    } while (YES);
     
     if (nav) {
         
         NSArray *viewControllers = nav.viewControllers;
         
-        NSUInteger index = [viewControllers indexOfObject:viewCon];
+        NSUInteger index = [viewControllers indexOfObject:toCloseViewController];
         
         if (index == NSNotFound) {
             
@@ -96,14 +115,14 @@ static Class LT_defaultNavigationViewControllerClass = nil;
     }
     else{
         
-        if (viewCon.presentingViewController) {
+        if (toCloseViewController.presentingViewController) {
             
-            [viewCon dismissViewControllerAnimated:animated completion:nil];
+            [toCloseViewController dismissViewControllerAnimated:animated completion:nil];
         }
         else if (LT_defaultRootViewController
                  &&[LT_defaultRootViewController isKindOfClass:[UIViewController class]]){
             
-            if (viewCon != LT_defaultRootViewController) {
+            if (toCloseViewController != LT_defaultRootViewController) {
                 
                 [[UIApplication sharedApplication].delegate window].rootViewController = LT_defaultRootViewController;
             }
@@ -121,11 +140,10 @@ static Class LT_defaultNavigationViewControllerClass = nil;
     
     urlString = LTLTRouter_FilterString(urlString);
     
-    if ([urlString respondsToSelector:@selector(stringByAddingPercentEncodingWithAllowedCharacters:)]) {
+    if (@available(iOS 7.0, *)) {
         
         urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    }
-    else{
+    } else {
         
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     }

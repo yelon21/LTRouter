@@ -9,7 +9,7 @@
 #import "LYViewController.h"
 #import "LTRouter.h"
 #import "Page1VC.h"
-#import "UIColor+LTCommon.h"
+//#import "UIColor+LTCommon.h"
 
 @interface LYViewController ()
 
@@ -22,12 +22,12 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LYViewController *vc = [sb instantiateViewControllerWithIdentifier:@"LYViewController"];
     NSLog(@"para=%@",para);
-    UIColor *color  = [UIColor colorWithHexString:para[@"color"]];
-    if (!color) {
-        
-        color = [UIColor lightGrayColor];
-    }
-    vc.view.backgroundColor = color;
+//    UIColor *color  = [UIColor colorWithHexString:para[@"color"]];
+//    if (!color) {
+//
+//        color = [UIColor lightGrayColor];
+//    }
+    vc.view.backgroundColor = [UIColor lightGrayColor];
     vc.title = para[@"model"];
     
     return vc;
@@ -42,8 +42,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor whiteColor];
 
-    [LTRouter LT_SetDefaultNavigationViewControllerClass:NSClassFromString(@"LTNavigationController")];
+//    [LTRouter LT_SetDefaultNavigationViewControllerClass:NSClassFromString(@"LTNavigationController")];
 }
 
 - (NSString *)randomColor{

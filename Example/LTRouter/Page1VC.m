@@ -7,7 +7,7 @@
 //
 
 #import "Page1VC.h"
-#import "UIColor+LTCommon.h"
+//#import "UIColor+LTCommon.h"
 #import "LTRouter.h"
 
 @interface Page1VC ()
@@ -21,12 +21,12 @@
     Page1VC *vc = [[Page1VC alloc]init];
     NSLog(@"para=%@",para);
     
-    UIColor *color  = [UIColor colorWithHexString:para[@"color"]];
-    if (!color) {
-        
-        color = [UIColor lightGrayColor];
-    }
-    vc.view.backgroundColor = color;
+//    UIColor *color  = [UIColor colorWithHexString:para[@"color"]];
+//    if (!color) {
+//        
+//        color = [UIColor lightGrayColor];
+//    }
+    vc.view.backgroundColor = [UIColor lightGrayColor];
     
     vc.title = para[@"model"];
     
@@ -41,6 +41,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(20, 100, 80, 40)];
     [btn addTarget:self action:@selector(pushAction) forControlEvents:UIControlEventTouchUpInside];

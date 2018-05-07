@@ -7,33 +7,30 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
+            buildForAnalyzing = "YES"
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B943CB04E44CE4A8F3C9B3B8671934D"
-               BuildableName = "Pods_LTRouter_Tests.framework"
-               BlueprintName = "Pods-LTRouter_Tests"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = 'BF781A4993C55CA4B7EB54F1F869E5B0'
+               BlueprintName = 'Pods-LTRouter_Tests'
+               ReferencedContainer = 'container:Pods.xcodeproj'
+               BuildableName = 'libPods-LTRouter_Tests.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      buildConfiguration = "Debug">
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -41,25 +38,17 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
+      buildConfiguration = "Debug"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1B943CB04E44CE4A8F3C9B3B8671934D"
-            BuildableName = "Pods_LTRouter_Tests.framework"
-            BlueprintName = "Pods-LTRouter_Tests"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
-      shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
+      debugDocumentVersioning = "YES"
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES">
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

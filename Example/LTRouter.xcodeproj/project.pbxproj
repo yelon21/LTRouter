@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A96AB392C945778114A8E3D /* libPods-LTRouter_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3174FE8BAFA217F3962D4459 /* libPods-LTRouter_Tests.a */; };
+		4365B794AA9A75EF54E7D683 /* libPods-LTRouter_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D245B451F516A88A35A8A02 /* libPods-LTRouter_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -20,12 +22,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		630234491DCD851400614860 /* UIColor+LTCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 630234481DCD851400614860 /* UIColor+LTCommon.m */; };
 		6303DAB61DCCFB22007136CA /* Page1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6303DAB51DCCFB22007136CA /* Page1VC.m */; };
-		634A67331DD2EB560011F118 /* LTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634A67321DD2EB560011F118 /* LTNavigationController.m */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		E60436AD5F1C597BA496AA10 /* Pods_LTRouter_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02A3E72F987010BECECC2AC /* Pods_LTRouter_Tests.framework */; };
-		E726F1B8084CA45A293959EE /* Pods_LTRouter_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBDF4881FD7EB3CD94B1801 /* Pods_LTRouter_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3174FE8BAFA217F3962D4459 /* libPods-LTRouter_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTRouter_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* LTRouter_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTRouter_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,21 +56,15 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		630234471DCD851400614860 /* UIColor+LTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LTCommon.h"; sourceTree = "<group>"; };
-		630234481DCD851400614860 /* UIColor+LTCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LTCommon.m"; sourceTree = "<group>"; };
 		6303DAB41DCCFB22007136CA /* Page1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page1VC.h; sourceTree = "<group>"; };
 		6303DAB51DCCFB22007136CA /* Page1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page1VC.m; sourceTree = "<group>"; };
-		634A67311DD2EB560011F118 /* LTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTNavigationController.h; sourceTree = "<group>"; };
-		634A67321DD2EB560011F118 /* LTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTNavigationController.m; sourceTree = "<group>"; };
 		6CA25E40082DDA642AA50F1C /* Pods-LTRouter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTRouter_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTRouter_Example/Pods-LTRouter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		710F7E192686950F6A9FED47 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		ABBDF4881FD7EB3CD94B1801 /* Pods_LTRouter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTRouter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D245B451F516A88A35A8A02 /* libPods-LTRouter_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTRouter_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68E99863F2A693F6425E3ED /* Pods-LTRouter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTRouter_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTRouter_Tests/Pods-LTRouter_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BC66E04817CDC5959C04B0D8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C3DDC32B28AF2FD4DB34FB01 /* Pods-LTRouter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTRouter_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTRouter_Tests/Pods-LTRouter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D75580E7CCF2A7D0E67743A8 /* LTRouter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LTRouter.podspec; path = ../LTRouter.podspec; sourceTree = "<group>"; };
-		E02A3E72F987010BECECC2AC /* Pods_LTRouter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTRouter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96E104EEA2D2B07E765C1B1 /* Pods-LTRouter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTRouter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTRouter_Example/Pods-LTRouter_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +76,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				E726F1B8084CA45A293959EE /* Pods_LTRouter_Example.framework in Frameworks */,
+				4365B794AA9A75EF54E7D683 /* libPods-LTRouter_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +87,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				E60436AD5F1C597BA496AA10 /* Pods_LTRouter_Tests.framework in Frameworks */,
+				3A96AB392C945778114A8E3D /* libPods-LTRouter_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,8 +122,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				ABBDF4881FD7EB3CD94B1801 /* Pods_LTRouter_Example.framework */,
-				E02A3E72F987010BECECC2AC /* Pods_LTRouter_Tests.framework */,
+				9D245B451F516A88A35A8A02 /* libPods-LTRouter_Example.a */,
+				3174FE8BAFA217F3962D4459 /* libPods-LTRouter_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,15 +133,10 @@
 			children = (
 				6003F59C195388D20070C39A /* LYAppDelegate.h */,
 				6003F59D195388D20070C39A /* LYAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* LYViewController.h */,
 				6003F5A6195388D20070C39A /* LYViewController.m */,
 				6303DAB41DCCFB22007136CA /* Page1VC.h */,
 				6303DAB51DCCFB22007136CA /* Page1VC.m */,
-				630234471DCD851400614860 /* UIColor+LTCommon.h */,
-				630234481DCD851400614860 /* UIColor+LTCommon.m */,
-				634A67311DD2EB560011F118 /* LTNavigationController.h */,
-				634A67321DD2EB560011F118 /* LTNavigationController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -295,7 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -318,13 +304,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LTRouter_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		80A5FD23269009FF49CD6804 /* [CP] Copy Pods Resources */ = {
@@ -348,13 +337,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LTRouter_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		96A8D8D79D86132923A081DB /* [CP] Embed Pods Frameworks */ = {
@@ -393,9 +385,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LTRouter_Example/Pods-LTRouter_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LTRouter/LTRouter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTRouter.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -409,12 +404,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630234491DCD851400614860 /* UIColor+LTCommon.m in Sources */,
 				6003F59E195388D20070C39A /* LYAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* LYViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				6303DAB61DCCFB22007136CA /* Page1VC.m in Sources */,
-				634A67331DD2EB560011F118 /* LTNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -522,7 +515,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -539,6 +532,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LTRouter/LTRouter-Prefix.pch";
 				INFOPLIST_FILE = "LTRouter/LTRouter-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,6 +552,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LTRouter/LTRouter-Prefix.pch";
 				INFOPLIST_FILE = "LTRouter/LTRouter-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

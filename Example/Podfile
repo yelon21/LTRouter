@@ -1,4 +1,4 @@
-use_frameworks!
+#use_frameworks!
 
 target 'LTRouter_Example' do
   pod 'LTRouter', :path => '../'
